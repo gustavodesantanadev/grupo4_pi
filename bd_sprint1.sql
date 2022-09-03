@@ -3,7 +3,7 @@ USE empresajet;
 
 -- Cadastro do usuário no site institucional (único)
 
-CREATE TABLE usuario (
+CREATE TABLE cadastro (
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 username VARCHAR (20),
 senha VARCHAR (20),
@@ -13,7 +13,7 @@ contato VARCHAR (20)
 );
 
 -- Exibição
-SELECT * FROM usuario;
+SELECT * FROM cadastro;
 
 -- Registro de empresa(s) por cliente (usuário)
 
@@ -56,7 +56,7 @@ categoria VARCHAR (30)
 SELECT * FROM produto;
 
 -- Insert da tabela usuario
-INSERT INTO usuario(username,senha,nome,email,contato)
+INSERT INTO cadastro(username,senha,nome,email,contato)
 VALUES ('Gustavo12','1234567','Gustavo de Santana','gustavo@gmail.com','1122233344'),
 		('Roberto34','abcdefg','Roberto Almeida','roberto@gmail.com','119887755'),
         ('Marcela56','abcd5678','Marcela Campos','marcela@gmail.com','11556677881');   
@@ -79,6 +79,10 @@ INSERT INTO produto(nomeProduto,categoria)
 VALUES ('Café Pilão','café'),
 		('Arroz Camil','arroz'),
 		('Bala Fini','doce');        
+
+-- UPDATE na tabela sensor
+UPDATE sensor SET fileira = '1A'
+	WHERE idSensor = 1;
 
         
 DROP DATABASE empresajet;    
